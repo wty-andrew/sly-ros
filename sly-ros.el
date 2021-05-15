@@ -86,7 +86,6 @@
   (let* ((ros-pkg-name (sly-ros-read-pkg-name))
          (path (ros-package-path ros-pkg-name))
          (system-name (sly-ros-get-systems-in-pkg ros-pkg-name ros-pkg-name)))
-    (sly-cd path)
     (setq default-directory path)
     (sly-eval `(cl:setf ros-load:*current-ros-package* ,ros-pkg-name))
     (message "Performing ASDF %S on system %S" 'load-op system-name)
